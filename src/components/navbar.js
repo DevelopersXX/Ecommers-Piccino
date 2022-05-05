@@ -1,5 +1,7 @@
 import { Navbar, Nav, Container } from "react-bootstrap"
 import { Outlet, Link } from "react-router-dom"
+import CartWidget from "./CartWidget"
+import Logo from "./logo.png"
 
 const NavBarMac = () => {
     return(
@@ -8,13 +10,14 @@ const NavBarMac = () => {
         <Container>
             <Navbar.Brand as={Link} to="/" ><img
           alt=""
-          src="/logo.png"
-          width="30"
-          height="30"
+          src={Logo}
+          width="40"
+          height="40"
           className="d-inline-block align-top"
         />{' '}
       Macentos</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            
             <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
                 <Nav.Link as={Link} to="/" >Inicio</Nav.Link>
@@ -24,11 +27,13 @@ const NavBarMac = () => {
             </Nav>
             </Navbar.Collapse>
         </Container>
-        </Navbar>  
+        <CartWidget />
+        </Navbar>
 
-        <section>
+        
+        {/* <section>
             <Outlet></Outlet>
-        </section> 
+        </section> */}
        </> 
     )
 }
