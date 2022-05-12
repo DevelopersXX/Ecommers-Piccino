@@ -1,5 +1,5 @@
 import { Navbar, Nav, Container } from "react-bootstrap"
-import { Outlet, Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 import CartWidget from "./CartWidget"
 import Logo from "./logo.png"
 
@@ -30,10 +30,6 @@ const NavBarMac = () => {
         <CartWidget />
         </Navbar>
 
-        
-        {/* <section>
-            <Outlet></Outlet>
-        </section> */}
        </> 
     )
 }

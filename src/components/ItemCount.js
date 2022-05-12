@@ -1,31 +1,38 @@
+import React from 'react';
 import { useState } from 'react';
 import './style/ItemCount.css';
+import { Button } from "react-bootstrap"
 
-export default function ItemCount({stock, initial, onAdd}) {
-    const [quantity, setQuantity] = useState(initial);
+const ItemCount = ({ onAdd }) => {
+  const initial = 1;
+  const stock = 5; 
 
-    function increase() {
-        if (quantity < stock) {
-            setQuantity(quantity + 1);
-        } 
-    }
+  const [cant, setCant] = useState(initial);
 
-    function decrease() {
-        if (quantity > 1) {
-            setQuantity(quantity - 1);
-        } 
-    }
+  
+  const addProduct = (num) => {
+    setCant(cant + num);
+  };
 
-    function addToCart() {
-        onAdd(quantity);
-    }
+  return (
+    <div className="count-container">
+      <div className="count-container__contador">
+        
+        <Button variant="secondary"  onClick={() => addProduct(-1)}
+          disabled={cant === initial ? true : null}>-</Button>{' '}
+        
+        <span className="count-container__qty">{cant}</span>
+       
+        <Button variant="secondary" onClick={() => addProduct(+1)}
+          disabled={cant === stock ? true : null}>+</Button>{' '}
+      </div>
 
-    return (
-        <div className="itemCount">
-            <button id='less' className="itemCount__minusBtn" onClick={decrease}>-</button>
-            <span className="itemCount__quantity">{quantity}</span>
-            <button id='plus' className="itemCount__plusBtn" onClick={increase}>+</button>
-            <button className="itemCount__addToCartBtn" onClick={addToCart}><i class="bi bi-bag-plus"></i></button>
-        </div>
-    );
-}
+      
+      <Button variant="outline-secondary" onClick={() => onAdd(cant)}
+        disabled={stock === 0 ? true : null}>Añadir</Button>{' '}
+
+    </div>
+  );
+};
+
+export default ItemCount;

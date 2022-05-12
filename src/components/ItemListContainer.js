@@ -1,22 +1,37 @@
+import React from "react";
+import { useEffect, useState } from "react";
+import { productos } from "./data/data";
+import ItemList from './ItemList.js';
+import './style/ItemListContainer.css';
 
-import  ItemCount from "./ItemCount";
- 
- export default function ItemListContainer ({greeting}) {
-    return (
-      // const [cont, setCont] = useState(0)
-      // const [fecha, setFecha]= useState("-")
-      // function contar(){
-      //   setCont(cont + 1)
-      //   setFecha(Date())
-      // }
 
-      <div className="itemListContainer">
-          <h1 className="itemListContainer_title">{greeting}</h1>
+const items = new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(productos);
+    }, 2000);
+  });
 
-          < ItemCount initial={1} stock={7} onAdd={()=>console.log("Agregado al pedido")}/>
-      </div>
-    );
-  };
+  function ItemListContainer() {
+
+    const [productos, setProductos] = useState([]);
+    const [loading, setLoading] = useState(true);
   
+    useEffect(() => {
+      items
+        .then(resp => {setProductos(resp);
+        })
+        .finally(() => setLoading(false));
+    }, []);
+
+    return (
+      <section className="item-list-container">
+        <div>
+            {loading ? (<h2>Cargando...</h2>) : (<ItemList productos={productos}/>)}
+        </div>
+      </section>  
+    )
+}
+  
+  export default ItemListContainer;
  
   
