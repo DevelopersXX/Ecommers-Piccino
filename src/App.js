@@ -8,6 +8,7 @@ import Home from './components/home';
 import Productos from './components/productos';
 import NavBarMac from './components/navbar';
 import ItemListContainer from './components/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer';
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
 </BrowserRouter>
   <div>
     <ItemListContainer greeting='Bienvenido a Macentos!!'/>
+  </div>
+  <div>
+    <ItemDetailContainer id={2} />
   </div>
 
 

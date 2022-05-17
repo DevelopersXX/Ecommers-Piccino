@@ -1,0 +1,8 @@
+.item-d-container {
+    padding-top: 180px;
+    background-image: url('/src/components/images/fondo.jpg');
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+  }

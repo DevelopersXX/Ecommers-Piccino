@@ -28,7 +28,7 @@ const ItemCount = ({ onAdd }) => {
       </div>
 
       
-      <Button variant="outline-secondary" onClick={() => onAdd(cant)}
+      <Button variant="outline-light" onClick={() => onAdd(cant)}
         disabled={stock === 0 ? true : null}>Añadir</Button>{' '}
 
     </div>
