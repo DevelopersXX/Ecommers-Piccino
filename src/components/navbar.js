@@ -1,36 +1,32 @@
-import { Navbar, Nav, Container } from "react-bootstrap"
 import { Link } from "react-router-dom"
 import CartWidget from "./CartWidget"
 import Logo from "./logo.png"
 
 const NavBarMac = () => {
     return(
-       <>    
-       <Navbar className="navBg" variant="dark" expand="lg">
-        <Container>
-            <Navbar.Brand as={Link} to="/" ><img
-          alt=""
-          src={Logo}
-          width="40"
-          height="40"
-          className="d-inline-block align-top"
-        />{' '}
-      Macentos</Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            
-            <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-                <Nav.Link as={Link} to="/" >Inicio</Nav.Link>
-                <Nav.Link as={Link} to="/about">Nosotros</Nav.Link>
-                <Nav.Link as={Link} to="/productos">Productos</Nav.Link>
-                <Nav.Link as={Link} to="/contact">Contacto</Nav.Link>                
-            </Nav>
-            </Navbar.Collapse>
-        </Container>
-        <CartWidget />
-        </Navbar>
 
-       </> 
+      <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
+      <div className='container-fluid'>
+        <a className='logotype' href='/'>
+          <Link to ='/'>
+            <img src={ Logo } alt="logo" width='100' />
+          </Link>
+        </a>
+        <button className='navbar-toggler' type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span className='navbar-toggler-icon'></span>
+        </button>
+        <div className='collapse navbar-collapse' id="navbarNavAltMarkup">
+          <div className='navbar-nav mx-auto'>
+            <a className='nav-link active' aria-current="page" href="/">Inicio</a>
+            <Link to='/categories/Macetas de Cemento'> <a className='nav-link' href="/Streetwear">Macetas de Cemento</a> </Link>
+            <Link to='/categories/Macetas de Madera'> <a className='nav-link' href="/Skate">Macetas de Madera</a> </Link>
+          </div>
+        </div>
+      </div>
+    
+        <CartWidget />
+    
+    </nav>
     )
 }
 export default NavBarMac

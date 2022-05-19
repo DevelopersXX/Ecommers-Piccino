@@ -2,7 +2,6 @@ import React from "react";
 import ItemCount from "./ItemCount";
 import './style/ItemDetail.css'
 
-
 const ItemDetail = ({item}) => {
     const onAdd = (cant) => {
         alert(`Agregaste ${cant} productos`);
@@ -13,7 +12,7 @@ const ItemDetail = ({item}) => {
     return (
         
         <div className="producto-detail">
-            <img src={ item.img } alt="" className="producto-detail-thumb"/>
+            <img src={ item.img } alt="Thumbnail" className="producto-detail-thumb"/>
             <div className="producto-detail-info">
                 <h2 className="name">{item.name}</h2>
                 <p className="description">{item.description}</p>

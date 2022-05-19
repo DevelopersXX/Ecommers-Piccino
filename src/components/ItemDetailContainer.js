@@ -1,20 +1,26 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { getProductById } from "./data/getData";
 import ItemDetail from './ItemDetail';
 import './style/ItemDetailContainer.css';
+import { useParams } from "react-router-dom";
+import { getData } from './data/getData'
 
-const ItemDetailContainer = ({id}) => {
-    const [product, setProduct] = useState(null);
+const ItemDetailContainer = () => {
+    const [producto, setProducto] = useState({})
+    const { detalleId } = useParams()
 
-    useEffect(()=>{
-        getProductById(Number(id), setProduct);
-        console.log(product);
-    }, [id]);
+    useEffect(() => {
+        getData(detalleId)  
+        .then(respuesta=> setProducto(respuesta))
+        .catch((err)=> console.log(err))
+    }, [])
 
+    // console.log(producto)
+    console.log(detalleId)
+    
     return (
         <section className="item-d-container">
-            {product ? <ItemDetail item={product} /> : <p>Cargando Detalles...</p>}
+            {producto ? <ItemDetail item={producto} /> : <p>Cargando Detalles...</p>}
         </section>
     )
 };

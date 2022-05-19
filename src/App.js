@@ -1,36 +1,27 @@
+import React from 'react';  
 import './App.css';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
-
-//importamos los comp creados
-import About from './components/about';
-import Contact from './components/contact';
-import Home from './components/home';
-import Productos from './components/productos';
-import NavBarMac from './components/navbar';
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
+import  NavBarMac from './components/navbar.js';
+import Cart from './components/Cart';
 
 function App() {
   return (
     <div className="App">
 
-<BrowserRouter>
-<Routes>
-  <Route path='/' element={ <NavBarMac /> }>
-    <Route index element={ <Home /> } />
-    <Route path='about' element={ <About /> } />
-    <Route path='contact' element={ <Contact /> } />
-    <Route path='productos' element={ <Productos /> } />
-    <Route path='*' element={ <Navigate replace to="/"/> }/>
-  </Route>
-</Routes> 
-</BrowserRouter>
-  <div>
-    <ItemListContainer greeting='Bienvenido a Macentos!!'/>
-  </div>
-  <div>
-    <ItemDetailContainer id={2} />
-  </div>
+  <BrowserRouter>
+
+    < NavBarMac />  
+    <Routes>
+      <Route path='/' element= {<ItemListContainer />}/>
+      <Route path='/categories/:id' element= {<ItemListContainer />}/>
+      <Route path='/detail/:detalleId' element= {<ItemDetailContainer/>} /> 
+      <Route path="/cart" element = { <Cart /> } />
+      <Route path='/*' element= {<Navigate to='/' replace/>} />
+    </Routes>
+
+  </BrowserRouter>
 
 
     </div>

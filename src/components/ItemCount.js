@@ -14,24 +14,44 @@ const ItemCount = ({ onAdd }) => {
     setCant(cant + num);
   };
 
+  
+
   return (
     <div className="count-container">
       <div className="count-container__contador">
-        
-        <Button variant="secondary"  onClick={() => addProduct(-1)}
-          disabled={cant === initial ? true : null}>-</Button>{' '}
-        
+        <button
+          className="count-container__button"
+          onClick={() => addProduct(-1)}
+          disabled={cant === initial ? true : null}
+        >
+          -
+        </button>
         <span className="count-container__qty">{cant}</span>
-       
-        <Button variant="secondary" onClick={() => addProduct(+1)}
-          disabled={cant === stock ? true : null}>+</Button>{' '}
+        <button
+          className="count-container__button"
+          onClick={() => addProduct(+1)}
+          disabled={cant === stock ? true : null}
+        >
+          +
+        </button>
       </div>
 
-      
-      <Button variant="outline-light" onClick={() => onAdd(cant)}
-        disabled={stock === 0 ? true : null}>Añadir</Button>{' '}
+     
+      {/* <button
+        className="button-primary"
+        onClick={() => onAdd(cant)}
+        disabled={stock === 0 ? true : null}
+      >
+        Agregar al Carrito
+      </button> */}
+      <Button variant="outline-light" className="button-primary"
+        onClick={() => onAdd(cant)}
+        disabled={stock === 0 ? true : null}>Agregar al Carrito</Button>{' '}
 
-    </div>
+      
+
+    </div> 
+    
   );
 };
 
