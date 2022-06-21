@@ -14,4 +14,4 @@ Simulación de un Ecommers para una vivero
 
 
 # Enlace al sitio web
-[Link del sitio web](https://creative-entremet-11ff84.netlify.app/cart)
+[Link a Macentos](https://unrivaled-alfajores-3b99d6.netlify.app/)
