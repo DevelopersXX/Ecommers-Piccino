@@ -1,0 +1,19 @@
+.bCarrito{
+    text-decoration: none;
+    font-size: 30px;
+    margin-bottom: 25px;    
+    padding-left: 20px;
+    color: white;
+}
+
+.qty-display{
+    display: flex;
+    flex-direction: column;
+    margin-top: -15px;
+    margin-left: 118px;
+    margin-right: 50px;
+    background-color: aliceblue;
+    border-radius: 60%;
+    width: 25px;
+    color: black;
+}

@@ -1,8 +1,23 @@
-.item-d-container {
-  padding-top: 180px;
-  background-image: url('/src/components/images/fondo.jpg');
-  background-repeat: repeat;
+.itemDetailContainer {
+  width: 100vw;
+  height: calc(100vh - 85px);
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
+  justify-content: center;
+  overflow-y: scroll;
+  background-image: url(../images/fondo.jpg);
   background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
+}
+
+@media (min-width: 600px) {
+  .itemDetailContainer {
+      height: calc(100vh - 50px);
+  }
+}
+
+@media (min-width: 768px) {
+  .itemDetailContainer {
+      height: calc(100vh - 59px);
+  }
 }
