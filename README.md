@@ -4,6 +4,11 @@
 
 Simulación de un Ecommers para una vivero
 
+
+![](https://imgur.com/KuJJavt.gif)
+
+
+
 ### Librerías y lenguajes utilizados
 
 -   React JS // Biblioteca Javascript de código abierto diseñada para crear interfaces de usuario con el objetivo de facilitar el desarrollo de aplicaciones en una sola página
